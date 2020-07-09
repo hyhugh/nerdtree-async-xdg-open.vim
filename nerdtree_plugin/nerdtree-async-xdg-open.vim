@@ -1,7 +1,7 @@
 " {{{
 
 function! s:callback()
-    echo vimproc#system_bg('xdg-open' . ' ' . g:NERDTreeFileNode.GetSelected().path.str(). ' 1>/dev/null 2>/dev/null' )
+    call vimproc#system_bg('xdg-open' . ' ' . g:NERDTreeFileNode.GetSelected().path.str(). ' 1>/dev/null 2>/dev/null' )
 endfunction
 
 function! s:callback_name()
