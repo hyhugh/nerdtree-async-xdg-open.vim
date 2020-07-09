@@ -1,7 +1,7 @@
-" === plugin configuration variables === {{{
+" {{{
 
 function! s:callback()
-    call vimproc#system_bg('xdg-open' . ' ' . g:NERDTreeFileNode.GetSelected().path.str())
+    echo vimproc#system_bg('xdg-open' . ' ' . g:NERDTreeFileNode.GetSelected().path.str(). ' 1>/dev/null 2>/dev/null' )
 endfunction
 
 function! s:callback_name()
@@ -9,7 +9,7 @@ function! s:callback_name()
 endfunction
 
 call NERDTreeAddMenuItem({
-            \ 'text': 'open file externally',
+            \ 'text': 'async open file (e)xternally',
             \ 'shortcut': 'e',
             \ 'callback': s:callback_name()
             \ })
